@@ -1,18 +1,9 @@
-<table>
-  <tr>
-    <th>Group</th>
-    <th>Name</th>
-    <th>Members</th>
-  </tr>
-  <tr>
-    <td><%=gone%></td>
-    <td><%=gtwo%></td>
-    <td><%=gthree%></td>
-    <td><%=gfour%></td>
-  </tr>
-  <tr>
-    <td>example</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-</table>
+<h1>All groups</h1>
+<ul>
+  <% @groups.each do |group| %>
+    <li><%= group.name %><% group.users.each do |user| %>
+      <%= user.name%> <%= user.surname %> <%= user.department %>
+      <% end %>
+      </li>
+  <% end %>
+</ul>
